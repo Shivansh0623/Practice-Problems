@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main (){
+int n;
+int i;
+int j;
+float avg;
+float sum = 0;
+float kelAvg;
+printf("Enter amount of temperature readings you want to process(in celcius) ");
+scanf("%d", &n);
+if (n>0){
+float temp[n];
+
+for (i=0; i<n; i++){
+    printf("\nEnter reading: ");
+    scanf("%f", &temp[i]);
+}
+float kelvin[n];
+for (j=0; j<n; j++){
+    kelvin[j] = 273.15 + temp[j];
+    printf("\nValues in kelvin are: %.3f", kelvin[j]);
+}
+
+for (i=0; i<n;i++){
+    sum = sum + temp[i];
+}
+   
+   avg= sum/n;
+   printf("Average of temperatures in celcius is: %.4f", avg);
+
+kelAvg = avg + 273.15;
+printf("Average of temperatures in kelvin is: %.4f", kelAvg);
+}
+
+else
+printf("Enter a positive value ");
+
+return 0;
+}
